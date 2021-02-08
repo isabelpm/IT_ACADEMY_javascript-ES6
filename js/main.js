@@ -43,3 +43,22 @@ const greet = (who) => {
     console.log("Hello " + who);
 }
 greet("Sergi");
+
+
+// Exercici 2: Arregla l'error 
+
+// En primer lugar definimos variables
+var users =
+    [{ firstName:'Homer', lastName: 'Simpson' },
+    { firstName: 'Marge', lastName: 'Simpson' },
+    { firstName: 'Bart',  lastName: 'Simpson' },
+    { firstName: 'Lisa',  lastName: 'Simpson' },
+    { firstName: 'Maggie',lastName: 'Simpson' }];
+    
+    // Usamos el método map para crear un nuevo array
+    users.map(function (user) {
+        
+    console.log(user.firstName);
+
+});
+
