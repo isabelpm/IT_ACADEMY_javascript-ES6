@@ -136,3 +136,35 @@ console.log(tasks);
 let result = tasks.map((task) => task.name);
 
 console.log(result);
+
+
+// ==================================== Nivell 2  ====================================
+
+/* Exercici 7: 
+Realitzar un programa en ES6, amb al menys una funció.
+Aquest programa demana a l'usuari dos nombres de l'1 a l'10 (con promp es suficient).
+Un cop introduïts, es mostra per consola la taula de multiplicar del número 1 que va fins al número 2 */
+
+// Creamos las variabvles mediante prompts
+let num1 = prompt("Escriu un número del 1 al 10");
+let num2 = prompt("Escriu un altre número del 1 al 10");
+
+let numStart = 1; //Para que inicializar por el num 1
+
+
+//Arrow function que hace la operación de calculo.
+const tabla = (numStart) => {
+    //Entrará en la condición si el (numStart) es más "< o =" al máx multiplicador indicado por el usuario.
+    if (numStart <= num2) {
+            
+        if ((num1 != "" && num1 <= 10 && num1 >= 1) && (num2 != "" && num2 <= 10 && num2 >= 1)) {  //Si ambos "" inputs tienen valores & el número es igual o menor a 10
+            //Imprimimos mediante consola solo el resultado max introducido
+            console.log(`${num1}x${numStart}=${num1 * numStart}`);
+            
+            tabla(numStart + 1); //Llamamos a la función tabla incrementando 1 el valor del numAux
+        } else {
+            alert("Escriu números del 1 al 10"); //Si las condiciones anteriores no se cumplen saldrá este mensaje
+        }
+    }
+}
+tabla(numStart);
