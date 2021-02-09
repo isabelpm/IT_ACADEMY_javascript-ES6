@@ -102,3 +102,37 @@ a();
 const doMoreWork = () => { //Declaro la función doMoreWork con código para su comprobación
     console.log(15);
 }
+
+
+// Exercici 6: Tenim un array de tasques i volem aconseguir un array que contingui únicament els noms de les tasques.
+
+let tasks = [
+    {
+        'name': 'Start React web',
+        'duration': 120
+    },
+    {
+        'name': 'Work out',
+        'duration': 60
+    },
+    {
+        'name': 'Procrastinate on facebook',
+        'duration': 240
+    }
+];
+
+/* Utilitzar el métode .forEach() per obtenir aquest array. Aquest métode crida a la una funció per cada element de una matriu, en ordre.
+   SINTAXIS: let nomVariable = [];
+             nomVariable.forEach(myFunction);  */
+
+let array = [];
+tasks.forEach((item) => {
+    array.push(item.name);
+});
+
+console.log(tasks);
+
+// Utilitzar .map() per obtenir aquest array, aquest métode crea un nova matriu amb el resultat.
+let result = tasks.map((task) => task.name);
+
+console.log(result);
