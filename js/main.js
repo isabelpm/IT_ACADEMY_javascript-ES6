@@ -62,3 +62,10 @@ var users =
 
 });
 
+// Exercici 3: Donat el següent array de strings, mostrar per consola la frase completa usant.reduce()
+//usant.reduce(): Ejecuta una funció reductora sobre cada element de un array, retornar como a resultat un únic valor.
+
+var epic = ['a', 'long', 'time', 'ago', 'in a', 'galaxy', 'far far', 'away'];
+var answer = epic.reduce((prev, curr) => `${prev} ${curr}`);
+
+console.log(answer);
