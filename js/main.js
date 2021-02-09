@@ -7,10 +7,10 @@
 /* Funció 1 */
 const multiply = (num1, num2) => num1 * num2;
 
-console.log(multiply(3,3));
+console.log(multiply(3, 3));
 
 /* Funció 2 */
-const toCelsius = fahrenheit => (5/9) * (fahrenheit-32);
+const toCelsius = fahrenheit => (5 / 9) * (fahrenheit - 32);
 
 console.log(toCelsius(80));
 
@@ -19,18 +19,18 @@ console.log(toCelsius(80));
 const padZeros = (num, totalLen) => {
     let numStr = num.toString();
     let numZeros = totalLen - numStr.length;
-    for (var i = 1; i <= numZeros; i++){
+    for (var i = 1; i <= numZeros; i++) {
         numStr = "0" + numStr;
     }
     return numStr;
 }
 
-console.log(padZeros(30,12));
+console.log(padZeros(30, 12));
 
 /* Funció 4 */
 const power = (base, exponent) => {
     let result = 1;
-    for (var i = 0; i < exponent; i++){
+    for (var i = 0; i < exponent; i++) {
         result *= base;
     }
     return result;
@@ -49,15 +49,15 @@ greet("Sergi");
 
 // En primer lugar definimos variables
 var users =
-    [{ firstName:'Homer', lastName: 'Simpson' },
+    [{ firstName: 'Homer', lastName: 'Simpson' },
     { firstName: 'Marge', lastName: 'Simpson' },
-    { firstName: 'Bart',  lastName: 'Simpson' },
-    { firstName: 'Lisa',  lastName: 'Simpson' },
-    { firstName: 'Maggie',lastName: 'Simpson' }];
-    
-    // Usamos el método map para crear un nuevo array
-    users.map(function (user) {
-        
+    { firstName: 'Bart', lastName: 'Simpson' },
+    { firstName: 'Lisa', lastName: 'Simpson' },
+    { firstName: 'Maggie', lastName: 'Simpson' }];
+
+// Usamos el método map para crear un nuevo array
+users.map(function (user) {
+
     console.log(user.firstName);
 
 });
@@ -75,6 +75,30 @@ console.log(answer);
 
 const getReverse = myString => {
     console.log([...myString].reverse());
-} 
+}
 getReverse("Hello World");
 
+
+// Exercici 5: Reemplaça en el següent bloc de codi la promesa per aync/await:
+
+//Arrow function llamada b()
+const b = () => {
+    let promises = new Promise((resolve) => {
+        setTimeout(() => resolve("DO IT!"), 1000)
+    });
+    return promises;
+}
+
+/*  Creamos la función async a() en formato arrow e incorporo el await en la función b() para que funcione.
+    Cuando se llama a una función async, esta devuelve un elemento Promise. Cuando la función async devuelve un valor, Promise se resolverá con el valor devuelto. */
+const a = async () => {
+    let c = await b();
+    console.log(c);
+    doMoreWork();
+}
+
+//Llamo a la función a()
+a();
+const doMoreWork = () => { //Declaro la función doMoreWork con código para su comprobación
+    console.log(15);
+}
