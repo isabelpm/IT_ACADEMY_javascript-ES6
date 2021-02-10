@@ -1,0 +1,122 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: linear-gradient(to right top, #2a5e8a, #0088b2, #00b0ad, #00d379, #a8eb12);
+    font-family: Roboto, Helvetica, sans-serif;
+
+}
+/* contenedor - caja-app */
+body .app {
+    width: 20rem;
+    height: 40rem;
+    /* background-color: #00b0ad; */
+    border-radius: 0rem 8rem 0rem 8rem;
+    box-shadow: 15px 5px 80px rgba(0, 0, 0, 0.3), 0 8px 16px rgba(0, 0, 0, 0.3);
+    border: 10px solid #a8eb12;
+    
+  
+}
+
+/* caja1 caja2 y título */
+body .app #caja1 h1,
+body .app #caja2 h1 {
+    font-size: 2.0rem;
+    font-weight: 500;
+    color: #fff;
+    text-align: center;
+    padding-top:0rem;
+}
+
+/* cajas1 y caja2 + logo disposición - Espacio - Margin que ocupa las */
+body #caja1 .logo,
+body #caja2 .logo {
+    display: block;
+    margin: 5px auto;
+    width: 8rem;
+}
+
+body .app #caja1 #tables,
+body .app #caja2 #tables{
+    text-align: center;
+   
+}
+
+/* Características: texto formulario, alineación texto, color y tamaño */
+body .app #caja1 #tables label,
+body .app #caja2 #tables label {
+    text-align: center;
+    font-size: 1rem;
+    color: #fff;
+    font-weight: 500 !important;
+}
+
+/* Características número formulario : estilo, color, bordes */
+body .app #caja1 #tables .form-control,
+body .app #caja2 #tables .form-control {
+    font-family: Roboto, Helvetica, sans-serif !important;
+    font-size: 2rem;
+    font-weight: 500 !important;
+    color: #2a5e8a !important;
+    text-align: center;
+    background-color: #a8eb1290 !important;
+    border: none !important;
+    border-radius: 18px !important;
+    height: 4rem !important;
+    width: 15rem !important;
+    margin: 0.5rem;
+}
+
+/* Texto avisando error */
+body .app #caja1 #tables .invalid-feedback,
+body .app #caja2 #tables .invalid-feedback {
+    color: white;
+    font-size: 80%;
+    background-color: rgb(197, 70, 70);
+    width: fit-content;
+    margin: 5px auto;
+}
+
+/* Botón resultat */
+body .app #caja1 #tables .btn-secondary,
+body .app #caja2 #tables .btn-secondary {
+    margin-top: 1rem;
+    text-transform: uppercase;
+}
+/* Botón acción */
+.btn-secondary {
+    font-size: 1rem;
+    color: #2a5e8a;
+    background-color: #a8eb1290;
+    border-color: #00b0ad;
+    border-radius: 18px !important;
+    box-shadow: 0 2px 0px rgba(14, 1, 1, 0.08), 0 8px 16px rgba(0, 0, 0, 0.08);
+    padding: 10px;
+}
+/* Botón icono calculadora */
+.bi-calculator{
+    color: #00d379;
+}
+
+/* Para ocultar ítems caja2 de html */
+body .app #caja2 {
+    display: none;
+    
+}
+body .app #caja2 #tablaHTML {
+    width: 60% !important;
+    margin: 2rem auto;
+    
+}
+body #caja2 #tablaHTML td{
+      font-family: Roboto, Helvetica, sans-serif !important;
+      font-size: 1.8rem;
+      font-weight: 400 !important;
+      color: #fff;
+      text-align: center;
+      padding: 3px;
+      min-width: 6rem;
+      background: #2a5e8a80;
+      border-top: 3px #a8eb1280 solid;
+}

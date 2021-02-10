@@ -144,7 +144,7 @@ console.log(result);
 Realitzar un programa en ES6, amb al menys una funció.
 Aquest programa demana a l'usuari dos nombres de l'1 a l'10 (con promp es suficient).
 Un cop introduïts, es mostra per consola la taula de multiplicar del número 1 que va fins al número 2 */
-
+/*
 // Creamos las variabvles mediante prompts
 let num1 = prompt("Escriu un número del 1 al 10");
 let num2 = prompt("Escriu un altre número del 1 al 10");
@@ -168,3 +168,78 @@ const tabla = (numStart) => {
     }
 }
 tabla(numStart);
+
+*/
+
+
+/* Exercici 8: 
+Modificar l'exercici anterior perquè els números s'introdueixin a través d'un formulari (amb validacions), 
+i que la taula de multiplicar la mostri en una taula HTML */
+
+
+//Llamamos a la función con addEventListener al clickar el botón submit
+document.getElementById("submit").addEventListener ("click",() => {
+    let num1 = document.forms["tables"]["num1"]; // recogemos el input num1
+    let num2 = document.forms["tables"]["num2"]; // recogemos el input num1
+    
+    // Con "is-invalid" eliminamos los mensajes de error sin contenido
+    num1.classList.remove("is-invalid"); 
+    document.getElementById("error1").textContent ="";
+    
+    num2.classList.remove("is-invalid"); 
+    document.getElementById("error2").textContent ="";
+    
+    // Valores vacíos o valores mayores de 10 o inferior a 1
+    if(num1.value == "" || num1.value > 10 || num1.value < 1) {
+        // Añadimos la clase is-invalid
+        num1.classList.add("is-invalid");
+        //Se imprimirá un mensaje de error si no se cumple el requisito
+        document.getElementById("error1").textContent = "Has d'escriure un número del 1 al 10";
+    }
+    if (num2.value == "" || num2.value > 10 || num2.value < 1) {
+        // Añadimos la clase is-invalid
+        num2.classList.add("is-invalid");
+        //Se imprimirá un mensaje de error si no se cumple el requisito
+        document.getElementById("error2").textContent = "Has d'escriure un número del 1 al 10";
+}
+    //Si ambos "" inputs tienen valores & el número es igual o menor a 10
+    if ((num1.value != "" && num1.value <= 10 && num1.value >= 1) && (num2.value != "" && num2.value <= 10 && num2.value >= 1)) { 
+        let tablaRes = document.getElementById("tablaHTML"); // Recoge el elemento del html para la tabla
+        tablaRes.classList.add("tabla"); // Asigna la clase tabla
+        changePage();
+        makeTable(num1, num2, tablaRes);
+    }
+});
+
+// Función para crear la tabla
+const makeTable = (num1, num2, tablaRes, numStart=1) => {
+    
+    //Indicamos que la condición se cumple si el numStart(1) es más pequeño que el numero introducido por el usuario
+    if (numStart <= num2.value){
+        // creamos las columnas
+        let row = document.createElement('tr');
+        tablaRes.appendChild(row); //agrega un nodo como el último hijo de un nodo.
+        
+        // creamos las filas
+        let datos = document.createElement('td'); 
+        row.appendChild(datos); //agrega un nodo como el último hijo de un nodo.
+
+        //name.textContent devuelve el contenido de texto del nodo especificado y sus descendientes. Multiplicaremos el valor num1 y num2 
+        datos.textContent = `${num1.value}x${numStart}`;
+
+        let datos2 = document.createElement('td'); 
+        row.appendChild(datos2); //agrega un nodo como el último hijo de un nodo.
+        
+        //Imprimirá resultado: num1 * num2 = resultado
+        datos2.textContent = `= ${num1.value * numStart}`;
+        
+        //En esta función llamamos al numStart incrementando +1
+        makeTable(num1, num2, tablaRes, numStart+1);
+    }
+}
+
+// Esta función servirá para cambiar del formulario a los resultados.
+const changePage = () => {
+    document.getElementById("caja1").style.display = "none";
+    document.getElementById("caja2").style.display = "block";
+}
